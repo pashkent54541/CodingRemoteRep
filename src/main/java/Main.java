@@ -7,22 +7,23 @@ public class Main {
         // Один - 4
         String[] str = {"Один", "Два"};
 
-        int[] arr = {1,2,3,4,4,5,6,7,7};
-        findDuplicate(arr);
+        System.out.println(findDuplicate(str));
 
     }
 
-    public static void findDuplicate(int[] arr) {
-        Map<Integer,Integer> map = new HashMap<>();
+    public static Map<String,Integer> findDuplicate(String[] strings) {
+        Map<String, Integer> map = new HashMap<>();
 
-        for(int nums: arr) {
-            map.put(nums,map.getOrDefault(nums,0) + 1);
+        for (String nums : strings) {
+            map.put(nums, nums.length());
         }
 
-        for(Map.Entry<Integer,Integer> entry: map.entrySet()) {
+        /*for(Map.Entry<String,Integer> entry: map.entrySet()) {
             if(entry.getValue() > 1) {
                 System.out.println(entry.getKey() + " - " + entry.getValue() + " штук");
             }
-        }
+        }*/
+
+        return map;
     }
 }
