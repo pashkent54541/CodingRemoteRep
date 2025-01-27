@@ -1,15 +1,29 @@
+import java.util.*;
+import java.util.stream.Stream;
+
 public class Main {
-    enum Countries {
-        RUSSIA, SPAIN, FRANCE, GERMAN
+    public static void main(String[] args) {
+        //        Задание: Напиши программу, которая на вход примет ArrayList строк и
+//        удаляет из него все дубликаты, не используя метод contains()
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("VOVA");
+        arrayList.add("VOVA");
+        arrayList.add("Vlad");
+        arrayList.add("Pasha");
+
+        System.out.println(arrayList);
+
+        HashSet<String> hashSet = new HashSet<>(arrayList);
+        arrayList.clear();
+        arrayList.addAll(hashSet);
+
+        System.out.println("result List: " + arrayList);
+
     }
 
-    public static void main(String[] args) {
-        Main.Countries country = Countries.GERMAN;
-        switch (country) {
-            case SPAIN -> System.out.println("Испания");
-            case FRANCE -> System.out.println("Франция");
-            case RUSSIA -> System.out.println("Россия");
-            default -> System.out.println("В классе нет страны");
-        }
-    }
+ /*   private static ArrayList<String> removeDuplicates(ArrayList<String> list) {
+        HashSet<String> set = new HashSet<>();
+        set.addAll(list);
+
+    }*/
 }
